@@ -2,9 +2,9 @@ import React from "react";
 import UserItem from "./UserItem";
 import "./UsersList.css"
 
-export default function UsersList(props) {
+export default function UsersList({items}) {
 
-if (PaymentResponse.item.length === 0){
+if (items.length === 0){
     return <div>
         <h2>No Users found</h2>
     </div>
@@ -12,8 +12,8 @@ if (PaymentResponse.item.length === 0){
 
 
 return(
-<ul>
-    {props.item.map((user)=> <UserItem 
+<ul className="user-list">
+    {items.map((user)=> <UserItem 
     key={user.id}
     id={user.id}
     image={user.image}
