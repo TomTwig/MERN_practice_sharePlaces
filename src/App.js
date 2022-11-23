@@ -6,23 +6,12 @@ import Users from './users/pages/Users';
 function App() {
   return (
 <Router>
-
-
   <Routes>
-
     <Route path='/' element={<Users/>} />
     <Route path='/places/new' element={<NewPlace/>}/>
     <Route path='*' element={<Navigate to={"/"}/>} />
-    
-    
   </Routes>
-  
-
-
-
 </Router>
-
-
   )
 }
 
