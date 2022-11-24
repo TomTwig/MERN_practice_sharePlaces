@@ -14,7 +14,7 @@ export default function PlaceItem(props) {
       <div className="place-item__info">
         <h2>{props.title}</h2>
         <h3>{props.address}</h3>
-        <p>{props.desciption}</p>
+        <p>{props.description}</p>
       </div>
       <div className="place-item__actions">
         <button>VIEW ON MAP</button>
