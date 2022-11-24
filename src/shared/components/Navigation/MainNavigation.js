@@ -14,11 +14,13 @@ export default function MainNavigation(props) {
   return (
     <>
     {drawerIsOpen && <Backdrop onClick={toggleDrawer} />}
-      {drawerIsOpen && (
-        <SiteDrawer>
-          <nav className="main-navigation__drawer-nav"></nav>
+    (
+        <SiteDrawer toggleDrawer ={toggleDrawer} show={drawerIsOpen}>
+          <nav className="main-navigation__drawer-nav">
+            <NavLinks/>
+          </nav>
         </SiteDrawer>
-      )}
+      )
 
       <MainHeader>
         <button onClick={toggleDrawer}>
