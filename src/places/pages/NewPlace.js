@@ -5,7 +5,11 @@ export default function NewPlace(){
 
 
     return(
+        <form className="place-form">
+            
 
-        <h2>New Place Work</h2>
+        </form>
+
+        
     )
 }
