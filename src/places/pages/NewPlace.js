@@ -34,6 +34,17 @@ const formReducer = (state, action) => {
 
 export default function NewPlace() {
 
+
+    function placeSubmitHandler(event){
+
+        event.preventDefault();
+        // send to backend
+        console.log(formState.inputs);
+    }
+
+
+  
+
     
  const [formState, dispatch] = useReducer(formReducer, {
     inputs: {
@@ -49,16 +60,16 @@ export default function NewPlace() {
     isValid: false,
   });
 
-  console.log(formState);
-
   const inputHandler = useCallback((id, value, isValid) => {
     dispatch({type: "INPUT_CHANGE", value : value, isValid: isValid, inputId:id  })
   }, []);
 
 
+  
+
 
   return (
-    <form className="place-form">
+    <form onSubmit={placeSubmitHandler} className="place-form">
       <Input
         id="title"
         element={"input"}
@@ -70,12 +81,22 @@ export default function NewPlace() {
       />
 
 
+
       <Input
         id="description"
         element={"textarea"}
         label={"Description"}
         validators={[VALIDATOR_MINLENGTH(5)]}
         errorText="Please enter a valid description"
+        onInput={inputHandler}
+      />
+
+<Input
+        id="address"
+        element={"input"}
+        label={"Address"}
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Please enter a valid address"
         onInput={inputHandler}
       />
    
